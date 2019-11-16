@@ -1,0 +1,66 @@
+table{
+
+    position:relative;
+    top:-100px;
+    left:50px;
+
+
+}
+
+#numero{
+    position:relative;
+    left: -60px;
+    width:100px;
+    height:20px;
+
+}
+
+#nome{
+    position:relative;
+    left: -70px;
+    width:200px;
+    height:0px;
+
+}
+
+#preco{
+
+    position:relative;
+    left: -50px;
+    width:150px;
+    height:0px;
+
+}
+
+#quantidade{
+
+    position:relative;
+    left: -40px;
+
+    width:100px;
+    height:0px;
+
+
+}
+
+#dados{
+
+    position:relative;
+    top:0px;
+    left:0px;
+
+
+}
+
+h3{
+
+position:relative;
+top: -20px;
+
+}
+
+h4{
+position:relative;
+top:-40px;
+
+}

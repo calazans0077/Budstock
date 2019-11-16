@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Budstock-relatorios</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='relatorios.css') }}">
+	</head>
+
+    <header> <img src="{{ url_for('static', filename='buda.PNG') }}" width="50" alt="Buda" title="Buda">
+
+        <h1>BUDSTOCK</h1>
+
+    </header>
+
+    <body>
+        <div id="background">
+
+            <h2>Relatórios : {{estoque}}</h2>
+            <form action="/relatorios"  method="POST">
+                <ul>
+                    {% for hora_ini in li_ %}
+                    <li><a href="{{url_for('pag_relatorios_rel',info=estoque,h_ini=hora_ini)}}">{{hora_ini}}</li>
+                    {% endfor %}
+                </ul>
+            </form>
+
+                <ul id="links"><form method= "POST">
+                    {% for cod, hora_ini in dic.items() %}
+                    <li><a href="{{url_for('pag_relatorios_rel',info=estoque,h_ini=hora_ini)}}">{{hora_ini}}</a><input type="submit" name={{cod}} value="x"/></li>
+                    {% endfor %}
+                </ul>
+
+                <input type="hidden" name="nome_estoque" value="{{estoque}}">
+
+            </form>
+
+            <a href="{{url_for('pag_estoque',info=estoque)}}">Voltar</a>
+
+        </div>
+    </body>
+
+
+
+
+    <footer>
+        <p id="fale">fale conosco</p>
+
+        <p id="link1"><a href="https://web.facebook.com/budstock.buda.1" title="página Budstock">Budstock no Facebook</a></p>
+        <p id="link2">email:budstock0000@gmail.com</p>
+        <p id="link3">telefone: 4002-8922 </p>
+    </footer>
+
+
+</html>

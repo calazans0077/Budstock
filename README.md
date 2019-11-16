@@ -1,2 +1,0 @@
-# Budstock
-Trabalho de lingprog 
