@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Budstock-fim</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sessao_fim.css') }}">
+	</head>
+
+    <header> <img src="{{ url_for('static', filename='buda.PNG') }}" width="50" alt="Buda" title="Buda">
+
+        <h1>BUDSTOCK</h1>
+
+    </header>
+
+        <body>
+            <div id="background">
+
+                <h2>Relatório : {{estoque}}</h2>
+                <h3>Receita :R${{receita}}</h3>
+                <h4>Produtos vendidos:</h4>
+                <h5>Hora da venda: {{hora_ini}}     Hora_Fim : {{hora_fim}}</h5>
+
+
+                <table>
+                    <th  id="numero">Numero:</th>
+                    <th  id="nome">Nome:</th>
+                    <th  id="preco">Preço:</th>
+                    <th id="quantidade">Quantidade:</th>
+
+                    {% for li in li_li %}
+                  <tr>
+                        {% for valor in li %}
+                    <td id="dados">{{valor}}</td>
+                        {% endfor %}
+                  </tr>
+                     {% endfor %}
+                </table>
+
+                {% if pagina %}
+                <form action="/sessao_fim"  method="POST">
+                    <input id="nao_salvar" type="submit" name="nao_salvar" value="Descartar Relatório">
+                    <input id="salvar" type="submit" name="salvar" value="Salvar Relatorio">
+                    <input type="hidden" name="nome_estoque" value="{{estoque}}">
+                </form>
+                {% endif %}
+
+
+            </div>
+        </body>
+
+                <footer>
+                    <p id="fale">fale conosco</p>
+
+                    <p id="link1"><a href="https://web.facebook.com/budstock.buda.1" title="página Budstock">Budstock no Facebook</a></p>
+                    <p id="link2">email:budstock0000@gmail.com</p>
+                    <p id="link3">telefone: 4002-8922 </p>
+			    </footer>
+
+</html>

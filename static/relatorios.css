@@ -1,0 +1,143 @@
+/* COMEÇO DA PÁGINA LOGO/TÍTULO */
+header{
+
+	height: 100px;
+	width: 1500px;
+	background-color: white;
+	opacity: 0.9;
+
+}
+
+header img{
+
+	max-width:100px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+    position: absolute;
+ left: 50px;
+}
+
+
+h1{
+
+font-size: 30px;
+font-family: Lucida console;
+color: white;
+
+position: absolute;
+top: 90px;
+left: 25px;
+
+}
+
+/* FIM DO LOGO/TÍTULO*/
+
+/*                      BACKGROUND DA PÁGINA                     */
+#fundo{
+	height: 600px;
+	width: 960px;
+	background-color: white;
+	opacity: 0.9;
+	position: absolute;
+	top: 108px;
+	left: 200px;
+
+}
+
+body {
+	background-image: url("teste.jpg");
+	background-attachment: fixed;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #000;
+
+}
+
+#background{
+
+
+background-color: white;
+opacity: 0.9;
+width: 1000px;
+height: 500px;
+position: absolute;
+left: 200px;
+
+}
+
+/*                                                                */
+
+
+
+
+/*                      NOME DO RELATÓRIO                           */
+h2{
+
+font-size: 30px;
+font-family: Lucida console;
+color: black;
+
+position: absolute;
+top: -100px;
+left: 250px;
+
+}
+
+/*                                                                   */
+
+
+
+
+
+/*                RODAPÉ DO SITE                     */
+
+footer{
+
+	font-family: sans-serif;
+	height: 10px;
+	font-size: 10px;
+	opacity: 0.9;
+	position: relative;
+	top: 400px;
+	left: 400px;
+}
+
+#fale{
+
+	font-size: 14px;
+	position: relative;
+	bottom: -30px;
+	left: 200px;
+	color: black;
+}
+
+ #link1{
+ 	position: relative;
+ 	bottom: -25px;
+ 	left: 30px;
+ 	width: 120px;
+ 	color: black;
+ }
+  #link2{
+  	 position: relative;
+ 	bottom: 0px;
+ 	left: 180px;
+ 	width: 120px;
+ 	color: black;
+ }
+  #link3{
+ 	position: relative;
+ 	bottom: 20px;
+ 	left: 380px;
+ 	width: 120px;
+ 	color: black;
+ }
+
+ p a{
+
+ 	text-decoration: none;
+	color: black;
+ }
+
+ /*              FIM                */

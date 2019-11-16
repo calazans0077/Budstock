@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Budstock</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+	</head>
+
+
+	
+		<body>
+
+			<header> <img src="{{ url_for('static', filename='buda.PNG') }}" width="50" alt="Buda" title="Buda">
+
+				<h1>BUDSTOCK</h1>
+
+			</header>
+
+
+
+			<div id="titulo">
+				<h2>Budstock</h2>
+					<article>O Budstock é a ferramenta ideal para organizar sua empresa.</article>
+			<div/>
+
+			<h3>Estoques:</h3>
+			<form method= "post">Novo estoque:<input type="text" name="novo_estoque"><input type="submit" name="add"value="criar"></form>
+
+				<ul id="links"><form method= "POST">
+					{% for i in range (0,len) %}
+					<li><a href="{{url_for('pag_estoque',info=repeat[i])}}">{{repeat[i]}}</a><input id="fechar" type="submit" name="{{repeat[i]}}" value="X"/></li>
+					{% endfor %}</form>
+				</ul>
+			<!--	<form method= "post">Excluir estoque:<input type="text" name="excluir"><input type="submit" name="remove"value="x"></form>-->
+			<footer>
+				<p id="fale">fale conosco</p>
+
+				<p id="link1"><a href="https://web.facebook.com/budstock.buda.1" title="página Budstock">Budstock no Facebook</a></p>
+				<p id="link2">email:budstock0000@gmail.com</p>
+				<p id="link3">telefone: 4002-8922 </p>
+			</footer>
+
+
+		</body>
+	
+</html>

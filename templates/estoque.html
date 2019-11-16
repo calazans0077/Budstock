@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Budstock-estoque</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estoque.css') }}">
+	</head>
+
+
+    <header> <img src="{{ url_for('static', filename='buda.PNG') }}" width="50" alt="Buda" title="Buda">
+
+        <h1>BUDSTOCK</h1>
+
+    </header>
+
+            <body>
+                <div id="background">
+
+                    
+                    <h2>Nome do Estoque : {{estoque}}
+
+                        <form action="/estoque" method= "post" id="caixa">
+                            <input style="display:none;" type="text" id="novo_estoque" name="novo_estoque">
+                            <input  style="display:none;" id="n_estoque" type="submit" name="n_estoque" value="Confirmar">
+                            <input type="hidden" name="nome_estoque" value="{{estoque}}">
+                        </form>
+
+                        <button type="button" id="renomear" onclick="novo_estoque()">Renomear Estoque</button>
+
+                    </h2>
+
+                    <button type="button"  onclick="novo_produt()">Novo Produto</button>
+                    <form action="/estoque" id="atualizar" method="POST">
+                        <table>
+                            <tr>
+                                <th>Numero:</th>
+                                <th>Nome:</th>
+                                <th>Preço:</th>
+                                <th>Quantidade:</th>
+                            </tr>
+                            <tr  id = "novoprod" style="display:none;">
+                               <td><input type="text" id="numeron" name="numeron" value=></td>
+                               <td><input type="text" id="nomen" name="nomen" value=></td>
+                               <td><input type="text" id="preçon" name="preçon" value=></td>
+                               <td><input type="text" id="quantidaden" name="quantidaden" value=></td>
+                            </tr>
+                            {% set nro_prod = ['1'] %}
+                            {% for li_tup in li_li_tup %}
+                          <tr>
+
+                                {% for cod, valor in li_tup %}
+                            <td><input type="text" id={{cod}} name={{cod}} value={{valor}}></td>
+                            {% if 'numero' in cod %}
+                            {% if nro_prod.append(1) %} {% endif %}
+                            {% endif %}
+                            {% if 'quantidade' in cod %}
+                            <td><input type="submit" name={{nro_prod|length}}  value="X" id="fechar"></td>
+                            {% endif %}
+                                {% endfor %}
+                          </tr>
+                             {% endfor %}
+                        </table>
+
+                             <input id="salvar" type="submit" name="atualizar" value="Atualizar Valores">
+                             <input id="vendas" type="submit" name="vendas" value="Vendas">
+                             <input id="relatorios" type="submit" name="relatorios" value="Relatórios">
+                             <input type="hidden" name="nome_estoque" value="{{estoque}}">
+                    </form>
+
+                    <p><a id="voltar" href="{{url_for('teste')}}">Voltar</a></p>
+
+                    <script>
+                    function novo_produt() {
+                        if( document.getElementById("novoprod").style.display=='none' )
+                        {
+                          document.getElementById("novoprod").style.display = 'table-row'; // set to table-row instead of an empty string
+                        }else
+                        {
+                          document.getElementById("novoprod").style.display = 'none';
+                        }
+                       }
+
+                    function novo_estoque() {
+                        if( document.getElementById("novo_estoque").style.display=='none' )
+                        {
+                          document.getElementById("novo_estoque").style.display = 'table-row'; // set to table-row instead of an empty string
+                          document.getElementById("n_estoque").style.display = 'table-row';
+                        }else
+                        {
+                          document.getElementById("novo_estoque").style.display = 'none';
+                          document.getElementById("n_estoque").style.display = 'none';
+                        }
+                       }
+                    </script>
+
+                </div>
+            </body>
+
+			<footer>
+				<p id="fale">fale conosco</p>
+
+				<p id="link1"><a href="https://web.facebook.com/budstock.buda.1" title="página Budstock">Budstock no Facebook</a></p>
+				<p id="link2">email:budstock0000@gmail.com</p>
+				<p id="link3">telefone: 4002-8922 </p>
+			</footer>
+
+</html>

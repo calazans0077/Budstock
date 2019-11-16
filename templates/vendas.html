@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+		<title>Budstock-vendas</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendas.css') }}">
+	</head>
+
+    <header> <img src="{{ url_for('static', filename='buda.PNG') }}" width="50" alt="Buda" title="Buda">
+
+        <h1>BUDSTOCK</h1>
+
+    </header>
+
+
+    <body>
+        <div id="background">
+                    <h2>Estoque : {{estoque}}</h2>
+                    <h3>Carrinho :</h3>
+
+                    <form action="/carrinho"  method="POST">
+                        <table>
+                            <tr>
+                                <th>Numero:</th>
+                                <th>Nome:</th>
+                                <th>Preço:</th>
+                                <th>Quantidade:</th>
+                            </tr>
+                            {% for li_tup in li_li_tup %}
+                          <tr>
+
+                                {% for cod, valor in li_tup %}
+                            {% if 'quantidade' in cod %}
+                            {% if atualizar %}
+                            <td><input  type="number" id={{cod}} name={{cod}} value={{valor}} min="0" step="1"></td>
+                            {% else %}    
+                            <td><input  type="number" id={{cod}} name={{cod}} value="0" min="0" step="1"></td>
+                            {% endif %}
+                            <td><button type="button"  onclick="mais('{{cod}}')">+</button></td>
+                            <td><button type="button"  onclick="menos('{{cod}}')">-</button></td>
+                            {% else %}
+                            <td><input type="text" id={{cod}} name={{cod}}  value={{valor}} readonly></td>
+                            {% endif %}
+                                {% endfor %}
+                          </tr>
+                             {% endfor %}
+                        </table>
+                    
+
+                    <input id="encerrar" type="submit" name="encerrar" value="Encerrar Sessão">
+                    <input id="reset" type="submit" name="reset" value="Reiniciar">
+                    <input id="carrinho" type="submit" name="carrinho" value="Confirmar">
+                    <input type="hidden" name="nome_estoque" value="{{estoque}}">
+                    </form>
+                    <script type="text/javascript">
+                        function mais(cod) {
+                            document.getElementById(cod).value++
+                           }
+                           
+                        function menos(cod) {
+                            if ( document.getElementById(cod).value != 0 ){
+                                document.getElementById(cod).value--
+                            }
+                           }
+
+               </script>
+         </div>
+
+    			<footer>
+                    <p id="fale">fale conosco</p>
+
+                    <p id="link1"><a href="https://web.facebook.com/budstock.buda.1" title="página Budstock">Budstock no Facebook</a></p>
+                    <p id="link2">email:budstock0000@gmail.com</p>
+                    <p id="link3">telefone: 4002-8922 </p>
+			    </footer>
+
+    </body>
+
+
+
+
+</html>

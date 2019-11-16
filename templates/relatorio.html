@@ -1,0 +1,30 @@
+<h1>Relatório : {{estoque}}</h1>
+<h2>Receita : {{receita}}</h2>
+<h3>Hora_Ini : {{hora_ini}}     Hora_Fim : {{hora_fim}}</h3>
+<h4>Produtos vendidos:</h4>
+<table>
+    <tr>
+        <th width="100">Numero:</th>
+        <th width="400">Nome:</th>
+        <th width="150">Preço:</th>
+        <th width="100">Quantidade:</th>
+    </tr>
+    {% for li in li_li %}
+  <tr>
+        {% for valor in li %}
+    <td>{{valor}}</td>
+        {% endfor %}
+  </tr>
+     {% endfor %}
+</table>
+
+<form action="/relatorio"  method="POST">
+<input id="voltar" type="submit" name="voltar" value="Voltar">
+<input id="baixar" type="submit" name="baixar" value="Baixar PDF">
+<input id="deletar" type="submit" name="deletar" value="Apagar Relatorio">
+<input type="hidden" name="nome_estoque" value="{{estoque}}">
+<input type="hidden" name="estoque_num" value="{{estoque_num}}">
+<input type="hidden" name="hora_ini" value="{{hora_ini}}">
+
+</form>
+
